@@ -1,0 +1,38 @@
+description = "Header"
+
+[staticMenu]
+code = "header-menu"
+
+[viewBag]
+==
+<div class="wrapper">
+  <div class="header__wrapper">
+    <div class="header__logo">
+      <a href="/" class="header__logo-link">
+        <img src="{{ 'assets/images/logo.png'|theme }}" class="header__logo-pic" alt="{{ this.theme.site_name }}">
+      </a>
+    </div>
+    <!--logo-->
+    <nav class="navbar">
+        <div class="hamburger__menu">
+            <div id="menuToggle">
+              <input type="checkbox" />
+              <span id="span1"></span>
+              <span id="span2"></span>
+              <span id="span3"></span>
+            </div>
+        </div>
+        {% partial 'app/menu-item' items=menuItems %}
+    </nav>
+    <!--navbar-->
+    <div class="header__contact">
+      <div class="header__contact-phone">
+        <a class="header__contact-link" href="tel:{{ this.theme.phone }}">{{ this.theme.phone }}</a>
+        <a class="header__contact-link" href="tel:{{ this.theme.phone_2 }}">{{ this.theme.phone_2 }}</a>
+      </div>
+      <button class="header__contact-btn call-modal">
+        <i class="fas fa-phone-alt"></i>
+      </button>
+    </div>
+  </div>
+</div>

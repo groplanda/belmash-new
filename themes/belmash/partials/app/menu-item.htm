@@ -1,0 +1,16 @@
+<ul class="navbar__list">
+  {% for item in items %}
+  <li class="navbar__item {{ item.items ? 'has-child' : '' }}">
+    <a href="{{ item.url }}" class="navbar__link {{ item.isActive or item.isChildActive ? 'active' : '' }} ">{{ item.title }}</a>
+    {% if item.items %}
+    <ul class="dropdown">
+      {% for subitem in item.items %}
+      <li class="navbar__item">
+        <a href="{{ subitem.url }}" class="navbar__link">{{ subitem.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>

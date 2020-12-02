@@ -1,0 +1,20 @@
+{% set service = __SELF__.service %}
+<section id="{{__SELF__.id}}" class="services">
+  <div class="wrapper">
+    <h2 class="services__title title center">
+      {{service.title|raw}}
+    </h2>
+    <div class="services__wrapper">
+			{% for item in service.services %}
+      <div class="services__item">
+        <a href="{{ item.service_link }}" class="services__item-link">
+          <div class="services__item-pic">
+            <img src="{{ item.service_image|media|resize(50, false, { quality: '100' }) }}" class="services__item-thumb" alt="{{ item.service_title|raw }}">
+          </div>
+          <h4 class="services__item-title center">{{ item.service_title|raw }}</h4>
+        </a>
+      </div>
+			{% endfor %}
+    </div>
+  </div>
+</section>

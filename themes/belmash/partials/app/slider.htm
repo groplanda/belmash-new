@@ -1,0 +1,31 @@
+description = "Slider"
+
+[viewBag]
+==
+<?php
+use Acme\Settings\Models\Slider;
+
+function onStart()
+{
+  $this['slides'] = Slider::orderBy('created_at', 'asc')->get();
+}
+?>
+==
+<section class="slider">
+  <div class="slider__home">
+    {% for slide in slides %}
+    <div class="slider__home-item">
+      <img class="slider__home-pic" src="{{ slide.image|media|resize(1920, 650, { mode: 'crop', quality: '80', extension: 'jpg' }) }}" alt="{{ slide.title|raw }}">
+      <div class="slider__home-content center">
+        <h2 class="slider__home-title">{{ slide.title|raw }}</h2>
+        <button class="button call-modal">БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ</button>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="slider__pic center">
+    <i class="fas fa-grip-lines-vertical"></i>
+  </div>
+
+</section>

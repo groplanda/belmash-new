@@ -1,0 +1,24 @@
+{% set advantage = __SELF__.advantages %}
+<section id="{{__SELF__.id}}" class="advantages">
+  <h2 class="advantages__title title center">
+    {{ advantage.title|raw }}
+  </h2>
+  <div class="wrapper">
+    <div class="advantages__wrapper">
+      {% for row in advantage.advantages %}
+      <div class="advantages__item">
+        <div class="advantages__item-content">
+          <h6 class="advantages__item-title">{{ row.a_title|raw }}</h6>
+          <p class="advantages__item-description">{{ row.a_descr|raw }}</p>
+        </div>
+        <div class="advantages__item-ico">
+          <img class="advantages__item-thumb" src="{{ row.a_ico|media }}" alt="{{ row.a_title|raw }}" />
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="advantages__action center">
+      <button class="button call-modal">БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ</button>
+    </div>
+  </div>
+</section>

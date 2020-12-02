@@ -1,0 +1,121 @@
+items:
+    -
+        title: Главная
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: home
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Техника
+        type: url
+        url: '#!'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: Маз
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: maz
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Амкодор
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: amkodor
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: МТЗ
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: mtz
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Гомсельмаш
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: gomselmash
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: Сервис
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: servis
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Аренда
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: arenda
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Лизинг
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: lizing
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Контакты
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: kontakty
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: 'Главное меню'

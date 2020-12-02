@@ -1,0 +1,103 @@
+description = "Home"
+
+[services]
+serviceName = 1
+
+[services services2]
+serviceName = 2
+
+[advantage]
+advantageName = 1
+
+[formwidget]
+formType = "first"
+
+[formwidget formwidget2]
+formType = "third"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        {% partial "app/meta" %}
+    </head>
+    <body class="home">
+        {% partial "app/preloader" %}
+        <div class="mobile__nav"></div>
+        <header class="header">
+            {% partial "app/header" %}
+        </header>
+        <main class="main">
+
+            {% partial "app/slider" %}
+
+            {% component 'services' %}
+
+            {% component 'services2::technic' %}
+
+            {% component 'advantage' %}
+
+            {% partial "app/partners" %}
+
+            <section class="about_us">
+                <div class="wrapper">
+                    <div class="about_us__wrapper">
+                        <div class="about_us__image">
+                            <div class="about_us__image-pic">
+                                <img class="about_us__image-thumb" src="{{ this.theme.about_photo|media|resize(406, 560, { mode: 'crop', quality: '90' }) }}" alt="{{ this.theme.site_name }}">
+                            </div>
+                        </div>
+                        <div class="about_us__content">
+                            <span class="about_us__content-subtitle">Коротко о нас</span>
+                            <h1 class="about_us__content-title">
+                                Cертифицированный сервисный центр - ООО "БелМашСервис"
+                            </h1>
+                            <div class="about_us__content-description">
+                                {% page %}
+                            </div>
+                            <button class="button call-modal">БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="about_us__pic center">
+                    <i class="fas fa-grip-lines-vertical"></i>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="footer__wrapper">
+                  <div class="footer__form">
+                    <h4 class="footer__form-title">Задайте вопрос, наши специалисты свяжутся с Вами в ближайшее время</h4>
+                    {% component 'formwidget' %}
+                  </div>
+                  <div class="footer__contact">
+                    {% partial "app/footer" %}
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper">
+                <div class="footer__bottom">
+                  <span class="footer__bottom-copyright">Copyright © 2020 {{ this.theme.site_name }}</span>
+                  <a class="footer__bottom-link" href="http://bardinteam.ru" target="_blank" rel="noopener noreferrer"><span>Разработано</span> в bardinteam.ru</a>
+                </div>
+            </div>
+        </footer>
+
+        <div class="popup" data-modal>
+            <div class="popup__dialog">
+                <div class="popup__content text-center">
+                    <button type="button" class="popup__close">&times;</button>
+                    <div class="popup__form">
+                        <h2 class="popup__title center">Оставить заявку</h2>
+                        {% component 'formwidget2' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="{{ 'assets/dist/js/app.js'|theme }}"></script>
+        {% framework extras %}
+        {% scripts %}
+    </body>
+</html>

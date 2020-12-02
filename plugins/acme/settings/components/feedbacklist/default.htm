@@ -1,0 +1,34 @@
+{% set feedbacks = __SELF__.feedbacks %}
+<section id="{{__SELF__.id}}" class="testimonial__area pt--100 pb--85">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="section__title text-center mb--30">
+                  <h2 class="title__line">Отзывы клиентов</h2>
+                  <p>Познакомьтесь с отзывами наших клиентов.</p>
+              </div>
+          </div>
+      </div>
+      <div class="row testimonial-wrap testimonial-style-3 testimonial-slider-active cr-slider-dots-1">
+        {% for feedback in feedbacks %}
+        {% set avatar = feedback.avatar %}
+        <!-- Single Testimonial -->
+        <div class="col">
+          <div class="testimonial text-center">
+            <div class="testimonial-thumb">
+              <img src="{{ avatar.thumb(100, 100, {'mode': 'crop'}) }}" alt="{{feedback.name}}">
+            </div>
+            <div class="testimonial-content">
+              <p>{{ feedback.rewiew }}</p>
+            </div>
+            <div class="testimonial-author">
+              <h6>{{feedback.name}}</h6>
+              <p>Оценка: {{ feedback.rating }}</p>
+            </div>
+          </div>
+        </div>
+      <!-- Single Testimonial -->
+      {% endfor %} 
+      </div>
+  </div>
+</section>

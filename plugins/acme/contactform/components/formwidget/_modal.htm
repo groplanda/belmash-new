@@ -1,0 +1,34 @@
+<form
+    id="{{ __SELF__.id }}"
+    data-request="{{ __SELF__ }}::onSend"
+    data-request-validate
+    data-request-flash
+    class="popup__form">
+    <div class="popup__form-row form-group">
+      <input class="popup__form-input" type="text" name="user_name" placeholder="Ваше имя" />
+      <span class="popup__form-error" data-validate-for="user_name"></span>
+    </div>
+    <div class="popup__form-row form-group">
+      <input class="popup__form-input" type="text" name="user_phone" placeholder="Ваш телефон" />
+      <span class="popup__form-error" data-validate-for="user_phone"></span>
+    </div>
+    <div class="popup__form-row form-group">
+      <textarea class="popup__form-input textarea" name="user_message" placeholder="Ваше сообщение"></textarea>
+    </div>
+    <div class="popup__form-row">
+      <div class="checkbox">
+        <input class="checkbox__input" type="checkbox" name="checkbox" id="checkbox-modal">
+        <label class="checkbox__label" for="checkbox-modal">
+          <span class="checkbox__text">Ознакомлен с <a class="checkbox__link" href="{{ 'privacy'|page }}" target="_blank" rel="noopener noreferrer">пользовательским соглашением</a></span>
+        </label>
+      </div>
+    </div>
+    <div class="popup__form-row">
+      <button type="submit" class="button" disabled data-attach-loading>Отправить</button>
+    </div>
+    {% flash %}
+    <div class="alert alert-{{ type }}" data-interval="4">
+        {{ message }}
+    </div>
+    {% endflash %}
+</form>

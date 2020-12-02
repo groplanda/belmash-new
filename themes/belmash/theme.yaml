@@ -1,0 +1,6 @@
+name: Belmash
+description: 'Belmash theme'
+author: 'Acme company'
+homepage: ''
+form: 'config/fields.yaml'
+code: ''

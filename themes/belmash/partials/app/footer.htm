@@ -1,0 +1,32 @@
+description = "Footer"
+==
+<div class="footer__contact-row">
+  <div class="footer__contact-ico">
+    <i class="fas fa-phone-alt"></i>
+  </div>
+  <div class="footer__contact-text">
+    <span class="footer__contact-text-title">Звоните</span>
+    <a class="footer__contact-text-link" href="tel:{{ this.theme.phone }}">{{ this.theme.phone }}</a>
+    <a class="footer__contact-text-link" href="tel:{{ this.theme.phone_2 }}">{{ this.theme.phone_2 }}</a>
+  </div>
+</div>
+
+<div class="footer__contact-row">
+  <div class="footer__contact-ico">
+    <i class="fas fa-map-marker-alt"></i>
+  </div>
+  <div class="footer__contact-text">
+    <span class="footer__contact-text-title">Наш адрес</span>
+    <p class="footer__contact-text-description">{{ this.theme.address }}</p>
+  </div>
+</div>
+
+<div class="footer__contact-row">
+  <div class="footer__contact-ico">
+    <i class="fas fa-envelope"></i>
+  </div>
+  <div class="footer__contact-text">
+    <span class="footer__contact-text-title">E-mail</span>
+    <a class="footer__contact-text-link" href="mailto:{{ this.theme.t_email }}">{{ this.theme.t_email }}</a>
+  </div>
+</div>
