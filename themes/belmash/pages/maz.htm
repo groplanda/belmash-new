@@ -1,10 +1,12 @@
-[viewBag]
 title = "Маз"
 url = "/maz"
-layout = "static-page"
+layout = "default"
 is_hidden = 0
-navigation_hidden = 0
+
+[carwidget]
+carName = "maz"
 ==
+<div class="wrapper">
 <p align="justify"><img src="/storage/app/media/pages/maz.png" style="width: 300px;" class="fr-fic fr-dib"></p>
 
 <p align="justify">«МАЗ» – один из крупнейших производителей грузовой, пассажирской, прицепной, строительной и коммунальной техники. Это техника соответствующая экологическим стандартам Евро-2, Евро-3, Евро-4, Евро-5, Евро-6. Всего более 500 моделей и модификаций.</p>
@@ -12,3 +14,5 @@ navigation_hidden = 0
 <p align="justify">Современный дизайн в совокупности с высокими техническими характеристиками позволяет технике МАЗ занимать стабильную позицию на международном рынке автотехники, конкурируя с мировыми производителями.</p>
 
 <p align="justify">С более подробной информацией Вы можете ознакомиться на сайте завода - <a href="http://amkodor.by/">http://maz.by/&nbsp;</a>или обратившись к нам.</p>
+</div>
+{% component 'carwidget' %}

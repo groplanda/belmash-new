@@ -14,9 +14,13 @@ items:
             isExternal: '0'
     -
         title: Техника
+        nesting: null
         type: url
         url: '#!'
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -24,22 +28,18 @@ items:
         items:
             -
                 title: Маз
-                nesting: 0
-                type: static-page
+                type: cms-page
                 code: ''
                 reference: maz
-                replace: 0
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Амкодор
-                nesting: 0
-                type: static-page
+                type: cms-page
                 code: ''
                 reference: amkodor
-                replace: 0
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -48,8 +48,10 @@ items:
                 title: МТЗ
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: mtz
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -59,8 +61,10 @@ items:
                 title: Гомсельмаш
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: gomselmash
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'

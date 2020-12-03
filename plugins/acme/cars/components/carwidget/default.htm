@@ -1,0 +1,24 @@
+{% set cars = __SELF__.cars %}
+<section class="technic">
+  <div class="wrapper">
+    <div class="technic__wrapper">
+      {% for car in cars %}
+      <div class="technic__item center">
+        <div class="technic__item-pic">
+          <img class="technic__item-thumb" src="{{ car.image|media|resize(385, 200, { quality: '90' }) }}" alt="{{ car.title }}" />
+        </div>
+        <h4 class="technic__item-title">
+          {{ car.title }}
+        </h4>
+        <p class="technic__item-description">
+          {{ car.description|raw }}
+        </p>
+        <button class="button call-modal outline">Оформить заказ</button>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="technic__pic center">
+    <i class="fas fa-grip-lines-vertical"></i>
+  </div>
+</section>

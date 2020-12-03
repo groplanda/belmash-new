@@ -181,24 +181,32 @@ img {
     }
   }
 }
-.page .header {
-  background-image: url(/themes/belmash/assets/images/adv_bg.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(45deg, rgba($third-color, .75), rgba($third-color, .9), rgba($third-color, .75));
-    z-index: 0;
+.page {
+  .header {
+    background-image: url(/themes/belmash/assets/images/adv_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(45deg, rgba($third-color, .75), rgba($third-color, .9), rgba($third-color, .75));
+      z-index: 0;
+    }
+    &__wrapper {
+      position: relative;
+      z-index: 1;
+    }
   }
-  &__wrapper {
-    position: relative;
-    z-index: 1;
+  .technic {
+    margin-top: 80px;
+    &__item-description {
+      font-size: 14px;
+    }
   }
 }
 .navbar {
@@ -908,6 +916,9 @@ img {
       color: darken($color: $four-color, $amount: 50%);
     }
   }
+}
+.entry {
+  padding-top: 150px;
 }
 .hamburger__menu {
   display: none;

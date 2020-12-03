@@ -18,14 +18,11 @@ formType = "third"
             {% partial "app/header" %}
         </header>
         <main class="main">
-            <section class="about_us">
+            <section class="entry">
                 <div class="wrapper">
                   <h1 class="title center">{{ this.page.title }}</h1>
-                    {% page %}
                 </div>
-                <div class="about_us__pic center">
-                    <i class="fas fa-grip-lines-vertical"></i>
-                </div>
+                {% page %}
             </section>
         </main>
         <footer class="footer">

@@ -17,7 +17,7 @@ mix.js('./themes/belmash/assets/src/app.js', 'dist/js')
   .options({
     processCssUrls: false
   })
-  .minify(['./themes/belmash/assets/dist/js/app.js', './themes/belmash/assets/dist/css/app.js'])
+  //.minify(['./themes/belmash/assets/dist/js/app.js', './themes/belmash/assets/dist/css/app.js'])
   .copyDirectory('./node_modules/@fortawesome/fontawesome-free/webfonts', './themes/belmash/assets/dist/webfonts')
   .browserSync({
     proxy: 'belmash',

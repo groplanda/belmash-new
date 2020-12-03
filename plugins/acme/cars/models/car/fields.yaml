@@ -1,0 +1,29 @@
+fields:
+    title:
+        label: Название
+        span: auto
+        type: text
+    is_active:
+        label: 'Включить?'
+        span: auto
+        type: switch
+    description:
+        label: Описание
+        size: small
+        span: full
+        type: textarea
+    image:
+        label: Фото
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        span: auto
+        type: mediafinder
+    type:
+        label: Тип
+        span: auto
+        type: text
+    price:
+        label: Цена
+        span: auto
+        type: number
