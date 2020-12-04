@@ -7470,6 +7470,11 @@ img {
   display: block;
 }
 
+.popup__request {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 .popup__content,
 .popup__request__content {
   position: fixed;
@@ -7485,6 +7490,9 @@ img {
 
 .popup__request__content {
   width: 50rem;
+  position: relative;
+  top: 25px;
+  transform: translateX(-50%);
 }
 
 .popup__close,
@@ -8031,11 +8039,6 @@ img {
   .checkbox__label::before {
     margin: auto;
     bottom: 0;
-  }
-
-  .popup__request {
-    overflow-x: hidden;
-    overflow-y: auto;
   }
 
   .popup__content, .popup__request__content {
