@@ -1,0 +1,11 @@
+<div class="car__pic">
+  <img class="car__pic-thumb" src="{{ car.image|media|resize(385, 200, { quality: '90' }) }}" alt="{{ car.title }}" />
+</div>
+<div class="car__info">
+  <h4 class="car__info-title">
+    {{ car.title }}
+  </h4>
+  <p class="car__info-description">
+    {{ car.description|raw }}
+  </p>
+</div>

@@ -3,52 +3,56 @@ const Modals = () => {
 
     function bindModal(triggerSelectot, modalSelector, closeSelector, destroyTrigget = false) {
 
-        const trigger = document.querySelectorAll(triggerSelectot),
+        try {
+            const trigger = document.querySelectorAll(triggerSelectot),
             modal = document.querySelector(modalSelector),
             close = document.querySelector(closeSelector),
             window = document.querySelectorAll('[data-modal]'),
             scroll = scrollWidth();
 
-        trigger.forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.target && e.preventDefault();
+            trigger.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.target && e.preventDefault();
 
-                btnPressed = true;
+                    btnPressed = true;
+
+                    window.forEach(item => {
+                        item.classList.remove('show');
+                        document.body.classList.remove('modal-open');
+                    })
+
+                    if(destroyTrigget) {
+                        item.remove();
+                    }
+
+                    modal.classList.add('show');
+                    document.body.classList.add('modal-open');
+                    document.body.style.marginRight = `${scroll}px`;
+                });
+            });
+
+            close.addEventListener('click', () => {
 
                 window.forEach(item => {
                     item.classList.remove('show');
                     document.body.classList.remove('modal-open');
                 })
 
-                if(destroyTrigget) {
-                    item.remove();
-                }
-
-                modal.classList.add('show');
-                document.body.classList.add('modal-open');
-                document.body.style.marginRight = `${scroll}px`;
-            });
-        });
-
-        close.addEventListener('click', () => {
-
-            window.forEach(item => {
-                item.classList.remove('show');
-                document.body.classList.remove('modal-open');
-            })
-
-            modal.classList.remove('show');
-            document.body.classList.remove('modal-open');
-            document.body.style.marginRight = `0px`;
-        })
-
-        modal.addEventListener('click', (e) => {
-            if(e.target === modal) {
                 modal.classList.remove('show');
                 document.body.classList.remove('modal-open');
                 document.body.style.marginRight = `0px`;
-            }
-        })
+            })
+
+            modal.addEventListener('click', (e) => {
+                if(e.target === modal) {
+                    modal.classList.remove('show');
+                    document.body.classList.remove('modal-open');
+                    document.body.style.marginRight = `0px`;
+                }
+            })
+        } catch(err) {
+            
+        }
     }
 
     function showModalByTime(selector, time) {
@@ -90,6 +94,7 @@ const Modals = () => {
 
     }
     bindModal('.call-modal', '.popup', '.popup__close');
+    bindModal('.open-info', '.popup__request', '.popup__request__close');
 }
 
 export default Modals;

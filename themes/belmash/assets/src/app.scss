@@ -444,6 +444,24 @@ img {
   &__item-description {
     margin: 0 20px 20px;
   }
+  &.cars {
+    .technic__item-description {
+      height: 105px;
+      overflow: hidden;
+    }
+  }
+  &__item-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    .button {
+      width: 48%;
+      padding: 10px;
+      font-size: 15px;
+      height: 45px;
+      text-transform: inherit;
+    }
+  }
 }
 .advantages {
   padding-top: 100px;
@@ -849,9 +867,13 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 30rem;
+  max-width: 100%;
   background-color: $four-color;
   padding: 30px;
   border-radius: 5px;
+}
+.popup__request__content {
+  width: 50rem;
 }
 .popup__close,
 .popup__request__close {
@@ -915,6 +937,45 @@ img {
       font-size: 15px;
       color: darken($color: $four-color, $amount: 50%);
     }
+  }
+}
+.car {
+  &__more {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    &.loading::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background: $four-color url(http://www.ka-fakt.ru/images/ajax-loader.gif) no-repeat center;
+      background-size: 25%;
+    }
+  }
+  &__pic {
+    max-width: 100%;
+    width: 18rem;
+  }
+  &__info {
+    max-width: 100%;
+    width: 28rem;
+    padding-left: 20px;
+  }
+  &__info-title {
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed rgba($main-color, .1);
+  }
+  &__info-description {
+    margin-bottom: 20px;
   }
 }
 .entry {
@@ -1139,19 +1200,19 @@ img {
   .mobile__nav {
     position: absolute;
     right: 0;
-    transform: translateX(100%);
     padding: 30px;
     background: $third-color;
     top: 0;
-    width: 300px;
+    width: 0;
     height: 100vh;
     transition: all .3s ease;
     z-index: 16;
+    display: none;
     &.open {
       display: flex;
       align-items: center;
       justify-content: center;
-      transform: translateX(0%);
+      width: 300px;
     }
     .navbar__list {
       width: 100%;
@@ -1238,6 +1299,20 @@ img {
       max-width: calc(100% - 20px);
       margin: 0 0 30px;
     }
+    &__item-buttons {
+      flex-direction: column;
+      align-items: center;
+      .button {
+        width: 70%;
+        margin-bottom: 20px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .car__info {
+    width: 100%;
   }
   .advantages {
     &__wrapper {
@@ -1304,10 +1379,20 @@ img {
     margin: auto;
     bottom: 0;
   }
+  .popup__request {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
   .popup__content, .popup__request__content {
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
+    top: 10%;
+    left: 10%;
+    transform: translate(0,0);
+    max-width: 80%;
+    padding: 20px 10px;
+  }
+  .popup__request__content {
+    position: relative;
+    margin-top: 40px;
   }
 }
 @media (max-width: 350px) {

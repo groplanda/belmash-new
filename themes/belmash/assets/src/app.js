@@ -6,6 +6,24 @@ import RemoveDisabled from './modules/RemoveDisabled';
 window.$ = window.jQuery = $;
 
 $(document).ready(function() {
+
+  $('.open-info').on('click', function(e){
+    const modalSelector = document.getElementById('modal');
+    modalSelector.classList.add('loading');
+    $.request('onShowMore', {
+      data: {
+        'id': e.target.dataset.id,
+      },
+      update: {'@modal.htm' : '#modal',}
+    })
+    .done(() => {
+      setTimeout(() => {
+        modalSelector.classList.remove('loading');
+      }, 300)
+    });
+  })
+
+
   $('.slider__home').slick({
     slidesToShow: 1,
     infinite: true,

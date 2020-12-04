@@ -14011,6 +14011,22 @@ __webpack_require__(/*! slick-carousel */ "./node_modules/slick-carousel/slick/s
 
 window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.open-info').on('click', function (e) {
+    var modalSelector = document.getElementById('modal');
+    modalSelector.classList.add('loading');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.request('onShowMore', {
+      data: {
+        'id': e.target.dataset.id
+      },
+      update: {
+        '@modal.htm': '#modal'
+      }
+    }).done(function () {
+      setTimeout(function () {
+        modalSelector.classList.remove('loading');
+      }, 300);
+    });
+  });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.slider__home').slick({
     slidesToShow: 1,
     infinite: true,
@@ -14123,45 +14139,51 @@ var Modals = function Modals() {
 
   function bindModal(triggerSelectot, modalSelector, closeSelector) {
     var destroyTrigget = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-    var trigger = document.querySelectorAll(triggerSelectot),
-        modal = document.querySelector(modalSelector),
-        close = document.querySelector(closeSelector),
-        window = document.querySelectorAll('[data-modal]'),
-        scroll = scrollWidth();
-    trigger.forEach(function (item) {
-      item.addEventListener('click', function (e) {
-        e.target && e.preventDefault();
-        btnPressed = true;
-        window.forEach(function (item) {
+
+    try {
+      var trigger = document.querySelectorAll(triggerSelectot),
+          modal = document.querySelector(modalSelector),
+          close = document.querySelector(closeSelector),
+          _window = document.querySelectorAll('[data-modal]'),
+          scroll = scrollWidth();
+
+      trigger.forEach(function (item) {
+        item.addEventListener('click', function (e) {
+          e.target && e.preventDefault();
+          btnPressed = true;
+
+          _window.forEach(function (item) {
+            item.classList.remove('show');
+            document.body.classList.remove('modal-open');
+          });
+
+          if (destroyTrigget) {
+            item.remove();
+          }
+
+          modal.classList.add('show');
+          document.body.classList.add('modal-open');
+          document.body.style.marginRight = "".concat(scroll, "px");
+        });
+      });
+      close.addEventListener('click', function () {
+        _window.forEach(function (item) {
           item.classList.remove('show');
           document.body.classList.remove('modal-open');
         });
 
-        if (destroyTrigget) {
-          item.remove();
-        }
-
-        modal.classList.add('show');
-        document.body.classList.add('modal-open');
-        document.body.style.marginRight = "".concat(scroll, "px");
-      });
-    });
-    close.addEventListener('click', function () {
-      window.forEach(function (item) {
-        item.classList.remove('show');
-        document.body.classList.remove('modal-open');
-      });
-      modal.classList.remove('show');
-      document.body.classList.remove('modal-open');
-      document.body.style.marginRight = "0px";
-    });
-    modal.addEventListener('click', function (e) {
-      if (e.target === modal) {
         modal.classList.remove('show');
         document.body.classList.remove('modal-open');
         document.body.style.marginRight = "0px";
-      }
-    });
+      });
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          modal.classList.remove('show');
+          document.body.classList.remove('modal-open');
+          document.body.style.marginRight = "0px";
+        }
+      });
+    } catch (err) {}
   }
 
   function showModalByTime(selector, time) {
@@ -14201,6 +14223,7 @@ var Modals = function Modals() {
   }
 
   bindModal('.call-modal', '.popup', '.popup__close');
+  bindModal('.open-info', '.popup__request', '.popup__request__close');
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Modals);

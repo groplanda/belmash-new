@@ -36,4 +36,10 @@ class CarWidget extends ComponentBase
         $cars = new Car;
         $this->cars = $cars::active()->where( 'type', '=', $this->property('carName'))->orderBy('created_at', 'asc')->get();
     }
+
+    public function onShowMore() {
+        $id = post('id');
+        $car = new Car;
+        $this->page['car'] = $car::where( 'id', '=', $id)->first();
+    }
 }
