@@ -133,6 +133,7 @@ img {
 }
 .header {
   z-index: 10;
+  background: $four-color;
   padding: 30px 0;
   position: absolute;
   width: 100%;
@@ -162,6 +163,9 @@ img {
     &:hover, &:focus, &:active {
       color: darken($color: $four-color, $amount: 10%);
     }
+    &.email {
+      font-size: 16px;
+    }
   }
   &__contact-btn {
     width: 50px;
@@ -183,20 +187,6 @@ img {
 }
 .page {
   .header {
-    background-image: url(/themes/belmash/assets/images/adv_bg.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(45deg, rgba($third-color, .75), rgba($third-color, .9), rgba($third-color, .75));
-      z-index: 0;
-    }
     &__wrapper {
       position: relative;
       z-index: 1;
@@ -225,7 +215,7 @@ img {
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
         font-size: 14px;
-        color: $four-color;
+        color: $third-color;
         position: absolute;
         right: 0;
         top: 0;
@@ -258,11 +248,11 @@ img {
   &__link {
     font-size: 18px;
     font-weight: 700;
-    color: $four-color;
+    color: $third-color;
     display: flex;
     align-items: center;
     &.active {
-      color: darken($color: $four-color, $amount: 10%);
+      color: darken($color: $third-color, $amount: 10%);
     }
   }
 }
@@ -961,7 +951,7 @@ img {
       right: 0;
       bottom: 0;
       z-index: 1;
-      background: $four-color url(http://www.ka-fakt.ru/images/ajax-loader.gif) no-repeat center;
+      background: $four-color url(/themes/belmash/assets/images/loader.gif) no-repeat center;
       background-size: 25%;
     }
   }
@@ -1010,7 +1000,7 @@ img {
     width: 40px;
     height: 6px;
     margin-bottom: 7px;
-    background: lighten($color: $four-color, $amount: 10%);
+    background: lighten($color: $third-color, $amount: 10%);
     border-radius: 4px;
     -webkit-transition: all .5s cubic-bezier(.08,.81,.87,.71);
     -moz-transition: all .5s cubic-bezier(.08,.81,.87,.71);
@@ -1025,15 +1015,15 @@ img {
     transform-origin: bottom right;
   }
   #menuToggle input:checked ~ #span1 {
-    background-color: $four-color;
+    background-color: $third-color;
     transform: rotate(45deg) translate(8px);
   }
   #menuToggle input:checked ~ #span2 {
-    background-color: $four-color;
+    background-color: $third-color;
     transform: rotate(495deg) translate(4px);
   }
   #menuToggle input:checked ~ #span3 {
-    background-color: $four-color;
+    background-color: $third-color;
     transform: rotate(45deg);
     opacity: 0;
   }
@@ -1244,6 +1234,12 @@ img {
           }
         }
       }
+    }
+  }
+  .navbar__link {
+    color: $four-color;
+    &.active {
+      color: darken($color: $four-color, $amount: 10%);
     }
   }
   .hamburger__menu {
