@@ -1,28 +1,12 @@
-require('slick-carousel');
-
 import $ from 'jquery';
 import Modals from './modules/Modals';
 import RemoveDisabled from './modules/RemoveDisabled';
 window.$ = window.jQuery = $;
 
+require('slick-carousel');
+require("@fancyapps/fancybox");
+
 $(document).ready(function() {
-
-  $('.open-info').on('click', function(e){
-    const modalSelector = document.getElementById('modal');
-    modalSelector.classList.add('loading');
-    $.request('onShowMore', {
-      data: {
-        'id': e.target.dataset.id,
-      },
-      update: {'@modal.htm' : '#modal',}
-    })
-    .done(() => {
-      setTimeout(() => {
-        modalSelector.classList.remove('loading');
-      }, 300)
-    });
-  })
-
 
   $('.slider__home').slick({
     slidesToShow: 1,
@@ -33,6 +17,7 @@ $(document).ready(function() {
     prevArrow: '<div class="prev"><i class="fas fa-long-arrow-alt-left"></i></div>',
     nextArrow: '<div class="next"><i class="fas fa-long-arrow-alt-right"></i></div>',
   });
+
   $('.partners__slider').slick({
     slidesToShow: 4,
     infinite: true,
@@ -65,6 +50,8 @@ $(document).ready(function() {
       }
     ]
   });
+
+  $('[data-fancybox="gallery"]').fancybox();
 
   $('form').on('ajaxSuccess', function(event) {
     event.currentTarget.reset();

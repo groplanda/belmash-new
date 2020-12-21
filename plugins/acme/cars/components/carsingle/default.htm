@@ -1,0 +1,44 @@
+{% set car = __SELF__.car %}
+<section class="single-car">
+  <div class="wrapper">
+    <div class="single-car__wrapper">
+      <div class="single-car__pic">
+        <img class="single-car__thumb" src="{{ car.image|media|resize(false, 320, { quality: '90' }) }}" alt="{{ car.title }}" />
+      </div>
+
+      {% if car.gallery %}
+      <div class="single-car__gallery">
+        <ul class="single-car__gallery-list">
+          {% for image in car.gallery %}
+          <li class="single-car__gallery-item">
+            <a href="{{ image.path }}" class="single-car__gallery-link" data-caption="{{ image.title }}" data-fancybox="gallery">
+              <img class="single-car__gallery-thumb" src="{{ image.thumb(120, 120, { 'mode': 'crop', quality: '100' }) }}" alt="{{ image.title }}" />
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <div class="single-car__content">
+        <div class="single-car__description">{{ car.description|raw }}</div>
+
+        <p>Производитель: </p>
+        <ul class="single-car__category-list">
+          {% for category in car.category %}
+          <li class="single-car__category-item">
+            <a href="{{ 'category'|page({ slug: category.slug }) }}" class="single-car__category-link">
+              {{ category.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+
+        {% if car.price %}
+          <p class="single-car__price">Цена:&nbsp;<span>{{ car.price }}</span>₽</p>
+        {% endif %}
+        <button class="button call-modal">Оформить заказ</button>
+      </div>
+    </div>
+  </div>
+</section>

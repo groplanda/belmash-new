@@ -1,0 +1,17 @@
+{% set categories = __SELF__.categories %}
+<section id="{{__SELF__.id}}" class="services categories">
+  <div class="wrapper">
+    <div class="services__wrapper">
+			{% for category in categories %}
+      <div class="services__item">
+        <a href="{{ 'category'|page({ slug: category.slug }) }}" class="services__item-link">
+          <div class="services__item-pic">
+            <img src="{{ category.image.thumb(200, 100, { quality: '100' }) }}" class="services__item-thumb" alt="{{ category.title}}">
+          </div>
+          <h4 class="services__item-title center">{{ category.title}}</h4>
+        </a>
+      </div>
+			{% endfor %}
+    </div>
+  </div>
+</section>

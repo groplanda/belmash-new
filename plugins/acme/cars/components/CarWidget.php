@@ -2,44 +2,40 @@
 
 use Cms\Classes\ComponentBase;
 use Acme\Cars\Models\Car;
+use Acme\Cars\Models\Category;
 
 class CarWidget extends ComponentBase
 {
     public $cars;
+    public $category;
 
     public function componentDetails()
     {
         return [
             'name'          => 'Блок авто',
-            'description'   => 'Добавить тип авто'
+            'description'   => 'Добавить авто'
         ];
     }
 
-    public function defineProperties()
+    function prepareVars()
     {
-        return [
-            'carName' => [
-                'title'             => 'Выберите раздел',
-                'type'              => 'dropdown',
-                'default'           => 'maz'
-            ],
-        ];
-    }
-
-    public function getCarNameOptions()
-    {
-        return Car::orderBy('type', 'asc')->lists('type', 'type');
+        $slug = $this->param('slug');
+        if($slug == null) {
+            $this->cars = Car::active()->orderBy('sort_order', 'asc')->get();
+        } else {
+            $category = Category::where('slug', $slug)->first();
+            if($category == null) {
+                return \Response::make($this->controller->run('404'), 404);
+            }
+            $this->page->title = $category->title;
+            $this->page->meta_title = $category->title;
+            $this->cars = $category->cars()->active()->orderBy('sort_order', 'asc')->get();
+            $this->category = $category;
+        }
     }
 
     public function onRun()
     {
-        $cars = new Car;
-        $this->cars = $cars::active()->where( 'type', '=', $this->property('carName'))->orderBy('created_at', 'asc')->get();
-    }
-
-    public function onShowMore() {
-        $id = post('id');
-        $car = new Car;
-        $this->page['car'] = $car::where( 'id', '=', $id)->first();
+        $this->prepareVars();
     }
 }

@@ -3,12 +3,12 @@
 use Backend\Classes\Controller;
 use BackendMenu;
 
-class Cars extends Controller
+class Categories extends Controller
 {
     public $implement = [
         'Backend\Behaviors\ListController',
         'Backend\Behaviors\FormController',
-        'Backend\Behaviors\ReorderController',
+        'Backend\Behaviors\ReorderController'
     ];
 
     public $listConfig = 'config_list.yaml';
@@ -18,6 +18,6 @@ class Cars extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Acme.Cars', 'main-menu-car');
+        BackendMenu::setContext('Acme.Cars', 'main-menu-car', 'side-menu-category');
     }
 }

@@ -8,6 +8,8 @@ class Plugin extends PluginBase
     {
         return [
             'Acme\Cars\Components\CarWidget' => 'carwidget',
+            'Acme\Cars\Components\CarSingle' => 'carsingle',
+            'Acme\Cars\Components\CategoryList' => 'categorylist',
         ];
     }
 

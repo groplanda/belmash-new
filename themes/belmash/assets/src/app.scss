@@ -2,6 +2,7 @@
 @import '~@fortawesome/fontawesome-free/scss/solid.scss';
 @import '~@fortawesome/fontawesome-free/scss/brands.scss';
 @import '~slick-carousel/slick/slick.css';
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.min.css';
 @import './reset.css';
 @import './vars.scss';
 @font-face {
@@ -339,6 +340,17 @@ img {
 .services {
   padding-top: 80px;
   padding-bottom: 80px;
+  &.categories  {
+    .services__item {
+      padding: 15px 30px;
+    }
+    .services__item-pic {
+      max-width: 200px;
+    }
+    .services__item-title {
+      margin-bottom: 0;
+    }
+  }
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -384,6 +396,74 @@ img {
     font-weight: 700;
     text-transform: uppercase;
     min-height: 36px;
+  }
+}
+.single-car {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: #f1f5ef;
+  &__wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  &__pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  &__gallery {
+    margin-bottom: 30px;
+  }
+  &__gallery-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  &__gallery-item {
+    margin-right: 15px;
+  }
+  &__gallery-thumb {
+    border-radius: 6px;
+    box-shadow: 0 4px 6px 4px rgba($third-color, .45);
+  }
+  &__content {
+    padding: 30px;
+    background: $four-color;
+    box-shadow: 0 3px 6px 4px rgba($main-color, .2);
+    border-radius: 6px;
+  }
+  &__description {
+    margin-bottom: 20px;
+  }
+  &__price {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    color: lighten($color: $main-color, $amount: 40%);
+    span {
+      color: $third-color;
+      font-weight: 700;
+      font-size: 22px;
+      margin-right: 5px;
+    }
+  }
+  &__category-list {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  &__category-item {
+    margin-right: 10px;
+  }
+  &__category-link {
+    display: inline-flex;
+    padding: 5px 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 4px 2px rgba($main-color, .15);
+    background-image: linear-gradient(45deg, $third-color 10%, lighten($third-color, 50%));
+    color: $four-color;
   }
 }
 .technic {
@@ -450,6 +530,11 @@ img {
       font-size: 15px;
       height: 45px;
       text-transform: inherit;
+    }
+    a {
+      &:hover, &:focus, &:active {
+        color: $four-color;
+      }
     }
   }
 }

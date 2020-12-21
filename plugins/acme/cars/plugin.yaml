@@ -8,9 +8,17 @@ navigation:
     main-menu-car:
         label: Авто
         url: acme/cars/cars
-        icon: icon-car
+        icon: icon-truck
         sideMenu:
-            side-menu-car-create:
+            side-menu-cars:
+                label: 'Все авто'
+                url: acme/cars/cars
+                icon: icon-book
+            side-menu-car-add:
                 label: Добавить
                 url: acme/cars/cars/create
                 icon: icon-plus
+            side-menu-category:
+                label: Категории
+                url: acme/cars/categories
+                icon: icon-list

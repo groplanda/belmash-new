@@ -1,4 +1,10 @@
 {% set cars = __SELF__.cars %}
+{% set category = __SELF__.category %}
+<section class="category__info">
+  <div class="wrapper">
+    {{ category.description|raw }}
+  </div>
+</section>
 <section class="technic cars">
   <div class="wrapper">
     <div class="technic__wrapper">
@@ -10,12 +16,12 @@
         <h4 class="technic__item-title">
           {{ car.title }}
         </h4>
-        <p class="technic__item-description">
+        <div class="technic__item-description">
           {{ str_limit(car.description, 190)|raw }}
-        </p>
+        </div>
         <div class="technic__item-buttons">
           <button class="button call-modal outline">Оформить заказ</button>
-          <button class="button open-info" data-id="{{car.id}}">Подробнее</button>
+          <a href="{{ 'car'|page({ slug: car.slug }) }}" class="button">Подробнее</a>
         </div>
       </div>
       {% endfor %}
@@ -25,15 +31,3 @@
     <i class="fas fa-grip-lines-vertical"></i>
   </div>
 </section>
-<div class="popup__request" data-modal>
-  <div class="popup__request__dialog">
-      <div class="popup__request__content text-center">
-          <button type="button" class="popup__request__close">&times;</button>
-          <div class="popup__request__form">
-              <div class="car__more" id="modal">
-                {% partial "carwidget::modal" %}
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
