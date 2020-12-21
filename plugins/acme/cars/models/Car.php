@@ -26,7 +26,6 @@ class Car extends Model
     public $rules = [
         'title' => 'required',
         'slug' => 'required',
-        'gallery'   => 'required',
         'gallery.*' => 'image|max:1000|dimensions:min_width=100,min_height=100'
     ];
 
