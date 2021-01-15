@@ -49,13 +49,12 @@ a {
   text-align: center;
 }
 .title {
-  max-width: 620px;
+  max-width: 650px;
   width: 100%;
-  font-size: 50px;
+  font-size: 45px;
   line-height: 50px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: -4px;
   margin: 0 auto 30px;
   span {
     color: $secondary-color;
@@ -64,7 +63,6 @@ a {
 h2, h3, h4, h5 {
   font-weight: 700;
   margin-bottom: 30px;
-  letter-spacing: -2px;
 }
 h2, h3 {
   font-size: 40px;
@@ -167,6 +165,10 @@ img {
     &.email {
       font-size: 16px;
     }
+  }
+  &__contact-info {
+    line-height: 1;
+    margin-top: -4px;
   }
   &__contact-btn {
     width: 50px;
@@ -296,7 +298,6 @@ img {
     color: $four-color;
     margin-bottom: 30px;
     text-transform: uppercase;
-    letter-spacing: -4px;
   }
   .slick-arrow {
     position: absolute;
@@ -396,6 +397,7 @@ img {
     font-weight: 700;
     text-transform: uppercase;
     min-height: 36px;
+    letter-spacing: .5px;
   }
 }
 .single-car {
@@ -584,7 +586,6 @@ img {
   &__item-title {
     font-size: 24px;
     font-weight: 700;
-    letter-spacing: -2px;
     text-transform: uppercase;
     color: $four-color;
   }
@@ -732,7 +733,6 @@ img {
     font-size: 40px;
     font-weight: 700;
     line-height: 50px;
-    letter-spacing: -3px;
     text-transform: uppercase;
     color: lighten($color: $main-color, $amount: 20%);
     margin-bottom: 20px;
@@ -970,7 +970,6 @@ img {
 .popup__title {
   font-size: 25px;
   font-weight: 700;
-  letter-spacing: -2px;
   margin-bottom: 30px;
   text-transform: uppercase;
 }
