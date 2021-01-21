@@ -7,12 +7,14 @@
       <div class="technic__wrapper">
         {% for item in service.services %}
         <div class="technic__item center">
+          <a href="{{ item.service_link }}">
           <div class="technic__item-pic">
             <img class="technic__item-thumb" src="{{ item.service_image|media|resize(385, 200, { quality: '90' }) }}" alt="{{ item.service_title }}">
           </div>
           <h4 class="technic__item-title">
             {{ item.service_title }}
           </h4>
+          </a>
           <div class="technic__item-description">
             {{ item.service_desc|raw }}
           </div>
