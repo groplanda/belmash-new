@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://belmash-2',
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'en-gb',
 
     /*
     |--------------------------------------------------------------------------
@@ -107,7 +107,7 @@ return [
     |
     */
 
-    'key' => 'base64:Mppf0vTs6P2RR4NJHt4GEHqK4w8SgioDVd4ILMHyLjc=',
+    'key' => '4r0k7Z3JxZbuPv4ypROLrWvXaT5Ix5wh',
 
     'cipher' => 'AES-256-CBC',
 

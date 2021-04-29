@@ -54,14 +54,6 @@
         "meyfa/phpunit-assert-gd": "^2.0.0",
         "dms/phpunit-arraysubset-asserts": "^0.1.0"
     },
-    "autoload-dev": {
-        "classmap": [
-            "tests/concerns/InteractsWithAuthentication.php",
-            "tests/fixtures/backend/models/UserFixture.php",
-            "tests/TestCase.php",
-            "tests/PluginTestCase.php"
-        ]
-    },
     "scripts": {
         "post-create-project-cmd": [
             "php artisan key:generate",

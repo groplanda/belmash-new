@@ -20,8 +20,8 @@ mix.js('./themes/belmash/assets/src/app.js', 'dist/js')
   //.minify(['./themes/belmash/assets/dist/js/app.js', './themes/belmash/assets/dist/css/app.js'])
   .copyDirectory('./node_modules/@fortawesome/fontawesome-free/webfonts', './themes/belmash/assets/dist/webfonts')
   .browserSync({
-    proxy: 'belmash',
-    host: 'belmash',
+    proxy: 'belmash-2',
+    host: 'belmash-2',
     notify: false,
     files: [
       "./themes/belmash/assets/dist/css/*.css",

@@ -57,7 +57,7 @@ return [
             'engine'     => 'InnoDB',
             'host'       => 'localhost',
             'port'       => 3306,
-            'database'   => 'belmash',
+            'database'   => 'belmash-2',
             'username'   => 'root',
             'password'   => 'root',
             'charset'    => 'utf8mb4',
