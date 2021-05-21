@@ -97,6 +97,7 @@ button {
   align-items: center;
   justify-content: center;
   &.outline {
+    color: $secondary-color;
     background: transparent;
     height: 40px;
     padding: 10px 20px;
