@@ -3,7 +3,11 @@
   <div class="wrapper">
     <div class="single-car__wrapper">
       <div class="single-car__pic">
-        <img class="single-car__thumb" src="{{ car.image|media|resize(false, 320, { quality: '90', 'extension': 'png' }) }}" alt="{{ car.title }}" />
+        {% if car.image| split('.', 2)[1] == "webp" %}
+          <img class="single-car__thumb" src="{{ car.image|media|resize(false, 320, { quality: '90', 'extension': 'png' }) }}" alt="{{ car.title }}" />
+        {% else %}
+          <img class="single-car__thumb" src="{{ car.image|media|resize(false, 320, { quality: '90' }) }}" alt="{{ car.title }}" />
+        {% endif %}
       </div>
 
       {% if car.gallery %}
@@ -11,8 +15,12 @@
         <ul class="single-car__gallery-list">
           {% for image in car.gallery %}
           <li class="single-car__gallery-item">
-            <a href="{{ image.path }}" class="single-car__gallery-link" data-caption="{{ image.title }}" data-fancybox="gallery">
-              <img class="single-car__gallery-thumb" src="{{ image.thumb(120, 120, { 'mode': 'crop', quality: '100', 'extension': 'jpg' }) }}" alt="{{ image.title }}" />
+            <a href="{{ image.extension == 'webp' ? image.thumb(false, false, { quality: '100', 'extension': 'png' }) : image.path }}" class="single-car__gallery-link" data-caption="{{ image.title }}" data-fancybox="gallery">
+              {% if image.extension == "webp" %}
+              <img class="single-car__gallery-thumb" src="{{ image.thumb(120, 120, { 'mode': 'crop', quality: '100', 'extension': 'png' }) }}" alt="{{ image.title }}" />
+              {% else %}
+              <img class="single-car__gallery-thumb" src="{{ image.thumb(120, 120, { 'mode': 'crop', quality: '100' }) }}" alt="{{ image.title }}" />
+              {% endif %}
             </a>
           </li>
           {% endfor %}
