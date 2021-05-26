@@ -3,7 +3,7 @@
   <div class="wrapper">
     <div class="single-car__wrapper">
       <div class="single-car__pic">
-        <img class="single-car__thumb" src="{{ car.image|media|resize(false, 320, { quality: '90' }) }}" alt="{{ car.title }}" />
+        <img class="single-car__thumb" src="{{ car.image|media|resize(false, 320, { quality: '90', 'extension': 'jpg' }) }}" alt="{{ car.title }}" />
       </div>
 
       {% if car.gallery %}
@@ -12,7 +12,7 @@
           {% for image in car.gallery %}
           <li class="single-car__gallery-item">
             <a href="{{ image.path }}" class="single-car__gallery-link" data-caption="{{ image.title }}" data-fancybox="gallery">
-              <img class="single-car__gallery-thumb" src="{{ image.thumb(120, 120, { 'mode': 'crop', quality: '100' }) }}" alt="{{ image.title }}" />
+              <img class="single-car__gallery-thumb" src="{{ image.thumb(120, 120, { 'mode': 'crop', quality: '100', 'extension': 'jpg' }) }}" alt="{{ image.title }}" />
             </a>
           </li>
           {% endfor %}
