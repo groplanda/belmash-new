@@ -11,7 +11,7 @@
       {% for car in cars %}
       <div class="technic__item center">
         <div class="technic__item-pic">
-          <img class="technic__item-thumb" src="{{ car.image|media|resize(385, 200, { quality: '90' }) }}" alt="{{ car.title }}" />
+          <img class="technic__item-thumb" src="{{ car.image|media|resize(385, 200, { quality: '90', 'extension': 'png' }) }}" alt="{{ car.title }}" />
         </div>
         <h4 class="technic__item-title">
           {{ car.title }}

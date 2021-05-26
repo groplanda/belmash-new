@@ -3,7 +3,7 @@
   <div class="wrapper">
     <div class="single-car__wrapper">
       <div class="single-car__pic">
-        <img class="single-car__thumb" src="{{ car.image|media|resize(false, 320, { quality: '90', 'extension': 'jpg' }) }}" alt="{{ car.title }}" />
+        <img class="single-car__thumb" src="{{ car.image|media|resize(false, 320, { quality: '90', 'extension': 'png' }) }}" alt="{{ car.title }}" />
       </div>
 
       {% if car.gallery %}

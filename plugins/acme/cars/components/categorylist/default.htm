@@ -6,7 +6,7 @@
       <div class="services__item">
         <a href="{{ 'category'|page({ slug: category.slug }) }}" class="services__item-link">
           <div class="services__item-pic">
-            <img src="{{ category.image.thumb(200, 100, { quality: '100', 'extension': 'jpg' }) }}" class="services__item-thumb" alt="{{ category.title}}">
+            <img src="{{ category.image.thumb(200, 100, { quality: '100' }) }}" class="services__item-thumb" alt="{{ category.title}}">
           </div>
           <h4 class="services__item-title center">{{ category.title}}</h4>
         </a>
