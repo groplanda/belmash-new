@@ -18,7 +18,6 @@ function onStart()
       <img class="slider__home-pic" src="{{ slide.image|media|resize(1920, 650, { mode: 'crop', quality: '80', extension: 'jpg' }) }}" alt="{{ slide.title|raw }}">
       <div class="slider__home-content center">
         <h2 class="slider__home-title">{{ slide.title|raw }}</h2>
-        <button class="button call-modal">БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ</button>
       </div>
     </div>
     {% endfor %}
@@ -26,6 +25,10 @@ function onStart()
 
   <div class="slider__pic center">
     <i class="fas fa-grip-lines-vertical"></i>
+  </div>
+
+  <div class="slider__quiz">
+    <button class="button call-modal" tabindex="0">БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ</button>
   </div>
 
 </section>

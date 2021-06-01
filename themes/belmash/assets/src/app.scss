@@ -327,6 +327,16 @@ img {
       left: auto;
     }
   }
+  &__quiz {
+    position: absolute;
+    left: 0;
+    bottom: 10%;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .slider__pic, .technic__pic, .about_us__pic {
   position: absolute;
