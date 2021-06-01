@@ -159,7 +159,7 @@ img {
     flex-direction: column;
   }
   &__contact-link {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     &:hover, &:focus, &:active {
       color: lighten($color: $secondary-color, $amount: 30%);
@@ -1360,7 +1360,8 @@ img {
     }
     &__contact {
       justify-content: center;
-      width: calc(100% - 60px);
+      width: 100%;
+      max-width: calc(100% - 60px);
     }
   }
   .slider {
@@ -1491,7 +1492,26 @@ img {
     margin-top: 40px;
   }
 }
+@media (max-width: 374px) {
+  .header {
+    &__contact-phone {
+      width: 100%;
+      max-width: calc(100% - 50px);
+    }
+    &__contact-btn {
+      width: 40px;
+      height: 40px;
+      margin-left: 10px;
+    }
+  }
+}
+
 @media (max-width: 350px) {
+  .header {
+    &__contact-link {
+      font-size: 18px;
+    }
+  }
   .technic .title, .title {
     font-size: 25px;
     line-height: 35px;
