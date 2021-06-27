@@ -9,7 +9,7 @@
       <div class="services__item">
         <a href="{{ item.service_link }}" class="services__item-link">
           <div class="services__item-pic">
-            <img src="{{ item.service_image|media|resize(50, false, { quality: '100' }) }}" class="services__item-thumb" alt="{{ item.service_title|raw }}">
+            <img src="{{ item.service_image|media|resize(false, false, { quality: '100' }) }}" class="services__item-thumb" alt="{{ item.service_title|raw }}">
           </div>
           <h4 class="services__item-title center">{{ item.service_title|raw }}</h4>
         </a>
