@@ -24,6 +24,9 @@ $(document).ready(function() {
     speed: 500,
     dots: true,
     arrows: false,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1024,
